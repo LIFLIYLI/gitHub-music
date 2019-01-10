@@ -1,0 +1,128 @@
+*{
+    margin: 0;padding: 0;
+    box-sizing: border-box;
+}
+*::before{
+    box-sizing: border-box;
+}
+*::after{
+    box-sizing: border-box;
+}
+ul,ol{list-style: none;}
+a{color: inherit;text-decoration: none;}
+input{font: inherit;}
+body{
+    font-size:12px;
+    line-height: 1.5;
+}
+
+/**    布局**/
+.page{
+    display: flex;
+
+    height: 100vh;
+}
+.page > aside{
+    width: 200px;
+}
+.page >main{
+    padding: 0 20px;;
+    flex-grow:1; 
+    background:#d4d4d4;
+}
+/*** aside****/
+.page>aside{ display: flex;flex-direction: column}
+.newSong{
+    text-align: center;
+    padding: 10px ;
+
+}
+.newSong.active{
+    background: #d4d4d4;
+}
+#songList-container{flex-grow: 1;}
+.songList{
+    border-top:1px solid #d4d4d4;   
+}
+.songList>li{
+    border-bottom:1px solid #999;
+    padding: 10px ;
+}
+.songList>li.active{
+    background: #d4d4d4;
+}
+.uploadArea{}
+
+    p{
+        margin:0;
+    }
+    .draggable{
+
+        text-align: center;
+        padding: 20px;
+        border:2px dashed black;
+        border-radius:6px;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        width: 200px;
+        flex-direction: column;
+    }
+    .clickable{cursor: pointer;}
+    /*****main****/
+
+.from{font-size: 14px;}
+.form> .row{margin:10px 0;}
+
+.form input[type=text]{
+    padding:8px 8px;
+    border-radius: 4px;
+    border:1px solid #ddd;
+    height: 30px;
+}
+.form input[type=button],
+.form input[type=submit],
+.form button{
+    height: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 4px;
+    background-color:white;
+    border:1px solid #ddd;
+}
+.page>main{padding-top:20px;}
+
+/***loading****/
+@keyframes loading{
+    0%{transform: scale(1.0)}
+    100%{transform:scale(0.1)}
+}
+.site-loading.active{
+    visibility: visible;
+}  
+.site-loading{
+    visibility:hidden;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0, 0, 0, 0.5);
+    z-index:1;
+    text-align: center;
+
+}
+.site-loading::before{
+    content:'';
+    display: block;
+    width: 100px;
+    height: 100px;
+    position:absolute;
+    background:green;
+    top:50%;
+    left: 50%;
+    margin-left: -50px;
+    margin-top: -50px;
+    border-radius:50%;
+    animation:loading 1s infinite alternate-reverse linear
+}
