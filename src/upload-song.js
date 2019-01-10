@@ -36,7 +36,7 @@
                 // unique_names: true,              // 默认false，key为文件名。若开启该选项，JS-SDK会为每个文件自动生成key（文件名）
                 // save_key: true,                  // 默认false。若在服务端生成uptoken的上传策略中指定了sava_key，则开启，SDK在前端将不对key进行任何处理
                 
-                domain: 'http://pismdhpmk.bkt.clouddn.com', //填你的域名    // bucket域名，下载资源时用到，必需
+                domain: 'http://pkv1z4mls.bkt.clouddn.com', //填你的域名    // bucket域名，下载资源时用到，必需
                 
                 max_file_size: '40mb',             // 最大文件体积限制 
                 dragdrop: true,                     // 开启可拖曳上传
